@@ -5,6 +5,11 @@ exports.up = (knex, Promise) => {
     table.string('title')
     table.integer('year')
     table.integer('director_id')
+      .notNullable()
+      .references('id')
+      .inTable('director')
+      .onDelete('CASCADE')
+      .index()
   })
 }
 
