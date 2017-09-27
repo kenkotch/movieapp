@@ -4,6 +4,7 @@ var router = express.Router();
 
 // C
 router.post('/', (req, res, next) => {
+
   knex('movie')
     .insert({
       title: req.body.title,
@@ -11,6 +12,9 @@ router.post('/', (req, res, next) => {
       director_id: req.body.director_id
     },'id')
     .then((items) => {
+      if (!req.body.title || !req.body.year) {
+        res.sendStatus(400)
+      }
       res.setHeader('Content-Type', 'application/json')
       res.send(JSON.stringify(items[0]))
     })
@@ -18,12 +22,15 @@ router.post('/', (req, res, next) => {
 
 // R
 router.get('/:id', function(req, res, next) {
-  let id = req.params.id
+  let id = Number(req.params.id)
   knex('movie')
     .select('title', 'year')
     .orderBy('title', 'asc')
     .where('id', id)
     .then((items) => {
+      if (!id) {
+        res.sendStatus(400)
+      }
       res.setHeader('Content-Type', 'application/json')
       res.send(JSON.stringify(items[0]))
     })

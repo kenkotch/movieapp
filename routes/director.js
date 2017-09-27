@@ -10,6 +10,9 @@ router.post('/', (req, res, next) => {
       nationality: req.body.nationality
     },'id')
     .then((items) => {
+      if (!req.body.name || !req.body.nationality) {
+        res.sendStatus(400)
+      }
       console.log(items)
       res.setHeader('Content-Type', 'application/json')
       res.send(JSON.stringify(items[0]))
