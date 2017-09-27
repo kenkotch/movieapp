@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Super CURDL</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="javascripts/home.js"></script>
+  </head>
+
+  <body>
+    <h1>SPA MOVIE APP</h1>
+    <section id = "blurg">
+    <fieldset>
+      <legend>Post New Movie to Database</legend>
+      <form class="newMovie" action="index.html" method="post">
+        <input type="text" name="title" placeholder="Movie Title"></input>
+        <input type="text" name="year" placeholder="Year Released"></input>
+        <!-- make this a drop down menu with director names and ADD NEW! -->
+        <input type="text" name="directorId" placeholder="Director ID"></input>
+        <input type="submit" name="submitNewMovie" value="SUBMIT"></input>
+        <!-- UPDATE/PATCH -->
+        <!-- DELETE -->
+        <!-- LIST ALL MOVIES -->
+      </form>
+    </fieldset>
+      <fieldset>
+        <legend>Post New Director to Database</legend>
+        <form class="newDirector" action="index.html" method="post">
+          <input type="text" name="name" placeholder="Director Name"></input>
+          <input type="text" name="nationality" placeholder="Director's Nationality">
+          <input type="submit" name="submitNewDirector" value="submit">
+          <!-- UPDATE/Patch-->
+          <!-- DELETE -->
+          <!-- List all directors -->
+        </form>
+      </fieldset>
+        </section>
+        <!-- LIST ALL MOVIES -->
+    <div class="listMovies">
+
+    </div>
+
+
+
+
+
+        <script type="text/javascript">
+        //don't forget ajax and jquery
+        </script>
+  </body>
